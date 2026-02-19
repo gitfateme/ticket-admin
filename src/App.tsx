@@ -4,6 +4,9 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Users from "./pages/Users";
+import UserAdd from "./pages/UserAdd";
+import UserUpdate from "./pages/UserUpdate";
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
@@ -19,7 +22,12 @@ function App() {
           {/* Protected Admin Routes */}
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            {/* Add more admin pages here like /users, /tickets */}
+            {/* Nested Users Routes */}
+            <Route path="/users">
+              <Route index element={<Users />} />
+              <Route path="add" element={<UserAdd />} />{" "}
+              <Route path="update/:id" element={<UserUpdate />} />{" "}
+            </Route>
           </Route>
 
           {/* Redirects */}

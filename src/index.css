@@ -37,12 +37,6 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-
-  --sidebar-width: 16rem;
-  --sidebar-width-icon: 4rem;
-
-  --spacing-sidebar-width: var(--sidebar-width);
-  --spacing-sidebar-width-icon: var(--sidebar-width-icon);
 }
 
 /* Base Shadcn Variables */
@@ -101,19 +95,5 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: "Vazirmatn", sans-serif;
-  }
-
-  [data-sidebar="inset"] {
-    transition: margin-right 0.3s ease-in-out;
-  }
-
-  /* When Sidebar is on the RIGHT and EXPANDED */
-  [data-side="right"][data-state="expanded"] ~ [data-sidebar="inset"] {
-    margin-right: var(--sidebar-width);
-  }
-
-  /* When Sidebar is on the RIGHT and COLLAPSED (Icon mode) */
-  [data-side="right"][data-state="collapsed"] ~ [data-sidebar="inset"] {
-    margin-right: var(--sidebar-width-icon);
   }
 }

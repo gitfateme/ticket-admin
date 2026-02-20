@@ -30,7 +30,8 @@ apiClient.interceptors.response.use(
   (error) => {
     //console.log("error: ", error)
     if (error.response && error.response.status === 401) {
-      window.location.href = "/login";
+      if (!window.location.href.includes("login"))
+        window.location.href = "/login";
       localStorage.setItem("jwt", null);
     }
     return Promise.reject(error);

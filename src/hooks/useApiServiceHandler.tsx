@@ -24,6 +24,7 @@ export const useApiService = <TData, TVariables>(
   const mutation = useMutation({
     mutationFn: service,
     onSuccess: (data) => {
+      return data;
       // Logic for global success (like logging) can go here
     },
     onError: (error: ApiError) => {

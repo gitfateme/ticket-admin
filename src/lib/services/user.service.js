@@ -1,8 +1,15 @@
 import { API_ENDPOINTS } from "@/lib/constants/apiEndpoints";
 import { apiClient } from "@/lib/httpClient";
 
-export const getUsersService = async () => {
+export const getUsers = async () => {
   const response = await apiClient.get(`${API_ENDPOINTS.GET_USERS}`);
+  return response.data;
+};
+
+export const login = async (body) => {
+  const response = await apiClient.post(API_ENDPOINTS.AUTH_LOGIN, {
+    ...body,
+  });
   return response.data;
 };
 
